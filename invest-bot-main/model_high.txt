@@ -1,0 +1,264 @@
+Initiated AutoTS object with best model: 
+MultivariateMotif
+{'fillna': 'ffill_mean_biased', 'transformations': {'0': 'SinTrend', '1': 'MaxAbsScaler', '2': 'Slice'}, 'transformation_params': {'0': {}, '1': {}, '2': {'method': 100}}}
+{'window': 7, 'point_method': 'weighted_mean', 'distance_metric': 'sokalsneath', 'k': 3, 'max_windows': 10000}
+Validation: 0, 1, 2, 3
+SMAPE: 83.27908612962005, 187.00007007411304, 114.32328163161645, 152.37521196491946
+MAE: 32.15644230865427, 255.74367843727248, 45.995222553724204, 50.91098767837544
+SPL: 0.4028088004834959, 2.3317455687138438, 0.28252646669808434, 0.20908960217353656
+Initiated AutoTS object with best model: 
+UnivariateMotif
+{'fillna': 'ffill', 'transformations': {'0': None}, 'transformation_params': {'0': {}}}
+{'window': 7, 'point_method': 'mean', 'distance_metric': 'matching', 'k': 10, 'max_windows': 10000}
+Validation: 0, 1, 2, 3
+SMAPE: 34.69878063628635, 101.0508820758899, 38.870265014103865, 129.1566182953688
+MAE: 43.62333333333469, 151.8299999999992, 56.026666666667246, 61.48666666666674
+SPL: 0.8930459457751422, 0.899047721352424, 0.808943670527261, 0.7282037549725898
+Initiated AutoTS object with best model: 
+WindowRegression
+{'fillna': 'ffill', 'transformations': {'0': 'MaxAbsScaler', '1': 'AlignLastValue', '2': 'Slice', '3': 'QuantileTransformer'}, 'transformation_params': {'0': {}, '1': {'rows': 7, 'lag': 1, 'method': 'additive', 'strength': 1.0, 'first_value_only': False}, '2': {'method': 0.2}, '3': {'output_distribution': 'uniform', 'n_quantiles': 33}}}
+{'window_size': 2, 'input_dim': 'univariate', 'output_dim': 'forecast_length', 'normalize_window': False, 'max_windows': 5000, 'regression_type': None, 'regression_model': {'model': 'RandomForest', 'model_params': {'n_estimators': 100, 'min_samples_leaf': 1, 'bootstrap': True}}}
+Validation: 0, 1, 2, 3
+SMAPE: 44.42000908984193, 109.54838014008702, 118.50957839552542, 188.3489210628485
+MAE: 42.64978682752484, 164.3688273564097, 123.24342845767393, 113.61810032832751
+SPL: 0.41361165297733926, 0.8724331014466177, 1.0768979787926358, 0.7447008162779469
+Initiated AutoTS object with best model: 
+SectionalMotif
+{'fillna': 'zero', 'transformations': {'0': 'StandardScaler', '1': 'MaxAbsScaler', '2': 'AnomalyRemoval', '3': 'DifferencedTransformer', '4': 'convolution_filter', '5': 'AlignLastValue'}, 'transformation_params': {'0': {}, '1': {}, '2': {'method': 'mad', 'method_params': {'distribution': 'gamma', 'alpha': 0.05}, 'fillna': 'linear', 'transform_dict': None}, '3': {}, '4': {}, '5': {'rows': 1, 'lag': 1, 'method': 'multiplicative', 'strength': 1.0, 'first_value_only': False}}}
+{'window': 15, 'point_method': 'weighted_mean', 'distance_metric': 'dice', 'include_differenced': True, 'k': 10, 'stride_size': 1, 'regression_type': None}
+Validation: 0, 1, 2, 3
+SMAPE: 54.335686287165316, 36.602348493814596, 119.46317747881943, 82.28775969359312
+MAE: 68.9450579446164, 82.39838635718066, 131.76772631666688, 97.54423498556298
+SPL: 0.2325645370483044, 0.7584147084866069, 1.7323254494363929, 1.1555106591321296
+Initiated AutoTS object with best model: 
+DatepartRegression
+{'fillna': 'mean', 'transformations': {'0': 'AlignLastValue'}, 'transformation_params': {'0': {'rows': 4, 'lag': 1, 'method': 'additive', 'strength': 1.0, 'first_value_only': False}}}
+{'regression_model': {'model': 'ExtraTrees', 'model_params': {'n_estimators': 100, 'min_samples_leaf': 1, 'max_depth': None}}, 'datepart_method': 'recurring', 'polynomial_degree': None, 'regression_type': None}
+Validation: 0, 1, 2, 3
+SMAPE: 156.2774199570614, 37.81056298960943, 30.75738549867154, 101.50241626756777
+MAE: 324.32566666666673, 30.66200000000036, 61.17366666666757, 95.93333333333344
+SPL: 2.3096030033759383, 0.5099744144992671, 0.5172722664102078, 0.5335294065044225
+Initiated AutoTS object with best model: 
+SeasonalityMotif
+{'fillna': 'nearest', 'transformations': {'0': 'QuantileTransformer', '1': 'Detrend', '2': 'Detrend', '3': 'PositiveShift'}, 'transformation_params': {'0': {'output_distribution': 'normal', 'n_quantiles': 165}, '1': {'model': 'GLS', 'phi': 1, 'window': None, 'transform_dict': None}, '2': {'model': 'Linear', 'phi': 1, 'window': None, 'transform_dict': None}, '3': {}}}
+{'window': 7, 'point_method': 'mean', 'distance_metric': 'mqae', 'k': 3, 'datepart_method': 'recurring'}
+Validation: 0, 1, 2, 3
+SMAPE: 90.46677265184287, 91.38033228384039, 149.50069907750452, 147.94686231873672
+MAE: 59.258404354509814, 77.80968830671215, 36.29635943107015, 43.77395602462459
+SPL: 0.28625789697480397, 0.40584384642935956, 0.0968078803161706, 0.25487599929094207
+Initiated AutoTS object with best model: 
+SeasonalNaive
+{'fillna': 'ffill', 'transformations': {'0': 'KalmanSmoothing'}, 'transformation_params': {'0': {'model_name': 'AR(2)', 'state_transition': [[1, 1], [0.1, 0]], 'process_noise': [[1, 0], [0, 0]], 'observation_model': [[1, 0]], 'observation_noise': 1.0, 'em_iter': None}}}
+{'method': 'mean', 'lag_1': 24, 'lag_2': None}
+Validation: 0, 1, 2, 3
+SMAPE: 145.47061136442576, 177.4244220882173, 125.37655802910075, 122.82075158710494
+MAE: 29.123570431475247, 168.9140311733792, 33.811338796153144, 35.33599616013316
+SPL: 0.21241853040766534, 0.814071918695606, 0.219912589800722, 0.21782416089957662
+Initiated AutoTS object with best model: 
+AverageValueNaive
+{'fillna': 'rolling_mean_24', 'transformations': {'0': 'SinTrend'}, 'transformation_params': {'0': {}}}
+{'method': 'Median', 'window': None}
+Validation: 0, 1, 2, 3
+SMAPE: 101.66768787799634, 200.0, 68.79705375429283, 95.06992911516726
+MAE: 17.523975500826463, 152.02197749425414, 46.45447299064054, 40.57512205243565
+SPL: 0.2254003438257459, 0.7576099772725136, 0.27880515828195856, 0.23111865711330853
+Initiated AutoTS object with best model: 
+GLM
+{'fillna': 'time', 'transformations': {'0': 'RollingMeanTransformer', '1': 'bkfilter', '2': 'PositiveShift'}, 'transformation_params': {'0': {'fixed': True, 'window': 12}, '1': {}, '2': {}}}
+{'family': 'Gaussian', 'constant': False, 'regression_type': None}
+Validation: 0, 1, 2, 3
+SMAPE: 173.29557242236226, 196.61123416553596, 200.0, 183.65260387296948
+MAE: 42.309412768814106, 142.55135949104766, 66.24392066982405, 53.111768663099475
+SPL: 0.12569271528223705, 0.9258841971422063, 0.4154481759096746, 0.16139373235022922
+Initiated AutoTS object with best model: 
+MetricMotif
+{'fillna': 'mean', 'transformations': {'0': 'bkfilter', '1': 'SinTrend', '2': 'PowerTransformer', '3': 'Detrend', '4': 'AlignLastValue'}, 'transformation_params': {'0': {}, '1': {}, '2': {}, '3': {'model': 'GLS', 'phi': 1, 'window': 30, 'transform_dict': {'fillna': None, 'transformations': {'0': 'EWMAFilter'}, 'transformation_params': {'0': {'span': 2}}}}, '4': {'rows': 1, 'lag': 2, 'method': 'additive', 'strength': 0.2, 'first_value_only': False}}}
+{'window': 10, 'point_method': 'weighted_mean', 'distance_metric': 'mse', 'k': 10, 'comparison_transformation': {'fillna': 'zero', 'transformations': {'0': 'KalmanSmoothing'}, 'transformation_params': {'0': {'model_name': 'local linear hidden state with seasonal 7', 'state_transition': [[1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0, 0.0], [0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0]], 'process_noise': [[0.0016, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 1e-06, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]], 'observation_model': [[1, 1, 0, 0, 0, 0, 0, 0]], 'observation_noise': 0.04, 'em_iter': None}}}, 'combination_transformation': {'fillna': 'pchip', 'transformations': {'0': 'RegressionFilter'}, 'transformation_params': {'0': {'sigma': 3, 'rolling_window': 90, 'run_order': 'season_first', 'regression_params': {'regression_model': {'model': 'DecisionTree', 'model_params': {'max_depth': None, 'min_samples_split': 1.0}}, 'datepart_method': 'simple', 'polynomial_degree': None, 'transform_dict': None, 'holiday_countries_used': False}, 'holiday_params': None}}}}
+Validation: 0, 1, 2, 3
+SMAPE: 40.263634865607415, 106.37529550353548, 66.74337105041452, 138.61007080341173
+MAE: 20.93120069530574, 109.3127843467647, 63.50467624071293, 43.59285497091489
+SPL: 0.1978329096779813, 0.5514417653830554, 0.23020058804887442, 0.43469577884678084
+Initiated AutoTS object with best model: 
+KalmanStateSpace
+{'fillna': 'ffill', 'transformations': {'0': 'StandardScaler', '1': 'StandardScaler', '2': 'KalmanSmoothing', '3': 'SeasonalDifference'}, 'transformation_params': {'0': {}, '1': {}, '2': {'model_name': 'AR(2)', 'state_transition': [[1, 1], [0.1, 0]], 'process_noise': [[1, 0], [0, 0]], 'observation_model': [[1, 0]], 'observation_noise': 1.0, 'em_iter': None}, '3': {'lag_1': 7, 'method': 'LastValue'}}}
+{'state_transition': [[1, 1], [0, 1]], 'process_noise': [[0.1, 0.0], [0.0, 0.01]], 'observation_model': [[1, 0]], 'observation_noise': 0.5}
+Validation: 0, 1, 2, 3
+SMAPE: 60.21558510365825, 183.064313273974, 164.581399406546, 71.35458967519605
+MAE: 28.047998234429944, 47.641835560507836, 155.746100643867, 24.38962363380517
+SPL: 0.25970797979389887, 0.31031724350432394, 0.6389611131840154, 0.2306246178383415
+Initiated AutoTS object with best model: 
+MultivariateMotif
+{'fillna': 'ffill', 'transformations': {'0': 'Detrend', '1': 'bkfilter'}, 'transformation_params': {'0': {'model': 'GLS', 'phi': 1, 'window': None}, '1': {}}}
+{'window': 7, 'point_method': 'weighted_mean', 'distance_metric': 'matching', 'k': 3, 'max_windows': 10000}
+Validation: 0, 1, 2, 3
+SMAPE: 55.72611296480733, 137.62780371280357, 122.53444630464229, 142.61210094631795
+MAE: 5.684461856101142, 34.62004946007753, 83.65982752637974, 136.63312482424251
+SPL: 0.07929231204124879, 0.19262427999230558, 0.23703591958954795, 0.2726562599241867
+Initiated AutoTS object with best model: 
+UnivariateMotif
+{'fillna': 'KNNImputer', 'transformations': {'0': 'QuantileTransformer', '1': 'SeasonalDifference'}, 'transformation_params': {'0': {'output_distribution': 'uniform', 'n_quantiles': 100}, '1': {'lag_1': 7, 'method': 'Mean'}}}
+{'window': 14, 'point_method': 'median', 'distance_metric': 'canberra', 'k': 5, 'max_windows': 1000}
+Validation: 0, 1, 2, 3
+SMAPE: 72.62514189863451, 128.0880508672869, 111.19743560939251, 124.12911401062725
+MAE: 17.90613683679868, 125.88852487256224, 67.70204575294012, 41.18192060388216
+SPL: 0.24789540147235004, 1.3984168670128105, 1.0328668576520972, 0.3996358142432048
+Initiated AutoTS object with best model: 
+UnivariateMotif
+{'fillna': 'ffill', 'transformations': {'0': 'QuantileTransformer', '1': 'SeasonalDifference', '2': 'SeasonalDifference'}, 'transformation_params': {'0': {'output_distribution': 'normal', 'n_quantiles': 20}, '1': {'lag_1': 7, 'method': 'LastValue'}, '2': {'lag_1': 7, 'method': 'Median'}}}
+{'window': 60, 'point_method': 'weighted_mean', 'distance_metric': 'canberra', 'k': 10, 'max_windows': 10000}
+Validation: 0, 1, 2, 3
+SMAPE: 91.39302185141183, 167.04894463763992, 145.57285301173556, 179.18491970970993
+MAE: 20.417301344319256, 140.36340584409058, 50.176638882042425, 78.35963206321678
+SPL: 0.2791081576342638, 0.577189259972021, 0.5440403690942619, 0.6491671076628052
+Initiated AutoTS object with best model: 
+MultivariateMotif
+{'fillna': 'ffill', 'transformations': {'0': 'KalmanSmoothing'}, 'transformation_params': {'0': {'model_name': 'local linear stochastic seasonal dummy', 'state_transition': [[1, 0, 0, 0], [0, -1, -1, -1], [0, 1, 0, 0], [0, 0, 1, 0]], 'process_noise': [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0]], 'observation_model': [[1, 1, 0, 0]], 'observation_noise': 0.25, 'em_iter': None}}}
+{'window': 10, 'point_method': 'weighted_mean', 'distance_metric': 'correlation', 'k': 10, 'max_windows': None}
+Validation: 0, 1, 2, 3
+SMAPE: 84.0324754296682, 103.64218402485676, 96.99121825209811, 151.87638246023113
+MAE: 23.070685819451764, 46.27569223044255, 120.21512125980512, 60.69265905067948
+SPL: 0.5025348027420614, 0.48743337371346623, 1.808223951388288, 0.6121089658423202
+Initiated AutoTS object with best model: 
+UnivariateMotif
+{'fillna': 'KNNImputer', 'transformations': {'0': 'QuantileTransformer', '1': 'SeasonalDifference', '2': 'MaxAbsScaler'}, 'transformation_params': {'0': {'output_distribution': 'uniform', 'n_quantiles': 100}, '1': {'lag_1': 7, 'method': 'Mean'}, '2': {}}}
+{'window': 60, 'point_method': 'median', 'distance_metric': 'canberra', 'k': 10, 'max_windows': 10000}
+Validation: 0, 1, 2, 3
+SMAPE: 107.08293757372546, 112.80656806366682, 129.63935764760222, 155.91001154724916
+MAE: 44.04126692302476, 74.48559509094015, 35.32436367573124, 134.60442390456643
+SPL: 0.33543760718889437, 0.8771885214200931, 0.35591365225788063, 0.5019473691724771
+Initiated AutoTS object with best model: 
+WindowRegression
+{'fillna': 'ffill', 'transformations': {'0': 'AnomalyRemoval'}, 'transformation_params': {'0': {'method': 'IQR', 'method_params': {'iqr_threshold': 3.0, 'iqr_quantiles': [0.4, 0.6]}, 'fillna': 'fake_date', 'transform_dict': None}}}
+{'window_size': 5, 'input_dim': 'univariate', 'output_dim': '1step', 'normalize_window': False, 'max_windows': 5000, 'regression_type': None, 'regression_model': {'model': 'MLP', 'model_params': {'hidden_layer_sizes': [32, 64, 32], 'max_iter': 250, 'activation': 'tanh', 'solver': 'lbfgs', 'early_stopping': False, 'learning_rate_init': 0.001}}}
+Validation: 0, 1, 2, 3
+SMAPE: 137.62672053387936, 114.0249241495, 108.00795362908498, 80.01073520937607
+MAE: 35.265712283378825, 71.09235399570363, 52.454780114785216, 97.1635449445166
+SPL: 0.22479886793103565, 0.6797463301896797, 0.5823737219792877, 1.3786860542214998
+Initiated AutoTS object with best model: 
+SectionalMotif
+{'fillna': 'pad', 'transformations': {'0': 'SinTrend', '1': 'HPFilter', '2': 'SeasonalDifference'}, 'transformation_params': {'0': {}, '1': {'part': 'trend', 'lamb': 6.25}, '2': {'lag_1': 12, 'method': 'LastValue'}}}
+{'window': 5, 'point_method': 'midhinge', 'distance_metric': 'nan_euclidean', 'include_differenced': True, 'k': 100, 'stride_size': 1, 'regression_type': None}
+Validation: 0, 1, 2, 3
+SMAPE: 21.976661106349653, 165.27982790462997, 90.96084574542328, 134.78982871282005
+MAE: 10.679781940561362, 85.73319859951864, 21.166434485373575, 133.8376599412278
+SPL: 0.23215930777119168, 0.5208810575567405, 0.3753918852843378, 1.9058483930880177
+Initiated AutoTS object with best model: 
+SeasonalNaive
+{'fillna': 'zero', 'transformations': {'0': 'SinTrend', '1': 'PositiveShift'}, 'transformation_params': {'0': {}, '1': {}}}
+{'method': 'lastvalue', 'lag_1': 28, 'lag_2': None}
+Validation: 0, 1, 2, 3
+SMAPE: 70.47610763206674, 152.52478538255863, 152.01263088314195, 82.26314335530029
+MAE: 82.3015689412391, 68.21607704271672, 70.77982588642195, 109.05195387917048
+SPL: 0.9190222648837706, 0.6279150423976221, 0.6359005236994756, 1.3029331873099987
+Initiated AutoTS object with best model: 
+SeasonalityMotif
+{'fillna': 'mean', 'transformations': {'0': 'RollingMeanTransformer', '1': 'AlignLastValue', '2': 'SeasonalDifference', '3': 'Detrend'}, 'transformation_params': {'0': {'fixed': True, 'window': 7}, '1': {'rows': 7, 'lag': 7, 'method': 'additive', 'strength': 1.0, 'first_value_only': False}, '2': {'lag_1': 7, 'method': 'LastValue'}, '3': {'model': 'GLS', 'phi': 1, 'window': None, 'transform_dict': {'fillna': None, 'transformations': {'0': 'AnomalyRemoval'}, 'transformation_params': {'0': {'method': 'zscore', 'transform_dict': {'transformations': {'0': 'DatepartRegression'}, 'transformation_params': {'0': {'datepart_method': 'simple_3', 'regression_model': {'model': 'ElasticNet', 'model_params': {}}}}}, 'method_params': {'distribution': 'uniform', 'alpha': 0.05}}}}}}}
+{'window': 10, 'point_method': 'mean', 'distance_metric': 'mae', 'k': 5, 'datepart_method': 'recurring'}
+Validation: 0, 1, 2, 3
+SMAPE: 81.63875939750106, 76.89159483935487, 200.0, 112.50975407602316
+MAE: 37.05455782312924, 25.115918367347692, 64.23673469387732, 26.43469387755181
+SPL: 0.39191050456909204, 0.12498399331800533, 0.7671614082973197, 0.2445957062705281
+Initiated AutoTS object with best model: 
+NVAR
+{'fillna': 'median', 'transformations': {'0': 'Detrend', '1': 'AlignLastValue', '2': 'PowerTransformer', '3': 'Detrend'}, 'transformation_params': {'0': {'model': 'GLS', 'phi': 1, 'window': None, 'transform_dict': None}, '1': {'rows': 7, 'lag': 7, 'method': 'additive', 'strength': 1.0, 'first_value_only': False}, '2': {}, '3': {'model': 'Linear', 'phi': 1, 'window': 365, 'transform_dict': None}}}
+{'k': 1, 'ridge_param': 0.02, 'warmup_pts': 1, 'seed_pts': 1, 'seed_weighted': None, 'batch_size': 5, 'batch_method': 'input_order'}
+Validation: 0, 1, 2, 3
+SMAPE: 116.18474580917034, 34.04807562482799, 139.57748818255448, 106.93769090598784
+MAE: 51.66548191208068, 20.255655875347752, 41.604939465176315, 37.780045203409735
+SPL: 0.7628186886420958, 0.31654394103891775, 0.6163860668023613, 0.6082133138238882
+Initiated AutoTS object with best model: 
+MultivariateMotif
+{'fillna': 'ffill_mean_biased', 'transformations': {'0': 'ClipOutliers', '1': 'Detrend'}, 'transformation_params': {'0': {'method': 'clip', 'std_threshold': 2, 'fillna': None}, '1': {'model': 'Linear', 'phi': 0.999, 'window': 30, 'transform_dict': None}}}
+{'window': 10, 'point_method': 'median', 'distance_metric': 'sqeuclidean', 'k': 10, 'max_windows': 10000}
+Validation: 0, 1, 2, 3
+SMAPE: 113.15464343258907, 21.1970276032655, 136.1754553370137, 136.8778719700523
+MAE: 48.4361912439983, 13.747723286748704, 50.14701499424687, 64.47666244192294
+SPL: 0.4358341515159581, 0.15541109771470424, 0.3829286851920561, 0.7833431729468431
+Initiated AutoTS object with best model: 
+UnivariateMotif
+{'fillna': 'pchip', 'transformations': {'0': 'RollingMeanTransformer', '1': 'MaxAbsScaler', '2': 'bkfilter'}, 'transformation_params': {'0': {'fixed': True, 'window': 10}, '1': {}, '2': {}}}
+{'window': 28, 'point_method': 'mean', 'distance_metric': 'jensenshannon', 'k': 10, 'max_windows': 10000}
+Validation: 0, 1, 2, 3
+SMAPE: 103.3175644153108, 89.61172855736315, 109.04520580158452, 79.86137379696338
+MAE: 42.011745026734026, 39.93851969513262, 56.70480849295054, 26.139502088286267
+SPL: 0.19206210406161164, 0.3068205293727518, 0.55176341663868, 0.2401292131599952
+Initiated AutoTS object with best model: 
+SeasonalNaive
+{'fillna': 'fake_date', 'transformations': {'0': 'EWMAFilter', '1': 'RobustScaler', '2': 'StandardScaler', '3': 'RollingMeanTransformer', '4': 'AlignLastValue'}, 'transformation_params': {'0': {'span': 10}, '1': {}, '2': {}, '3': {'fixed': True, 'window': 7}, '4': {'rows': 1, 'lag': 7, 'method': 'additive', 'strength': 1.0, 'first_value_only': False}}}
+{'method': 'mean', 'lag_1': 84, 'lag_2': 1}
+Validation: 0, 1, 2, 3
+SMAPE: 118.38473241857598, 125.50910343942246, 113.07261383995812, 48.28403071923148
+MAE: 54.604721155743356, 49.47262541567293, 53.508137878925844, 25.422423104123244
+SPL: 0.5658309620915535, 0.33618935958896395, 0.5031592172909727, 0.18502509603895187
+Initiated AutoTS object with best model: 
+UnivariateMotif
+{'fillna': 'rolling_mean_24', 'transformations': {'0': 'SinTrend', '1': 'LocalLinearTrend', '2': 'MinMaxScaler'}, 'transformation_params': {'0': {}, '1': {'rolling_window': 0.1, 'n_tails': 90, 'n_future': 0.2, 'method': 'mean'}, '2': {}}}
+{'window': 10, 'point_method': 'median', 'distance_metric': 'dice', 'k': 10, 'max_windows': 10000}
+Validation: 0, 1, 2, 3
+SMAPE: 68.73143477075753, 134.6195830434493, 107.99881598801251, 110.808639898085
+MAE: 84.48692492284283, 423.0573906293327, 1093.8823896056876, 245.81749540747697
+SPL: 0.5674850804909092, 1.6854655355905863, 9.156372415148024, 1.0750576377777705
+Initiated AutoTS object with best model: 
+WindowRegression
+{'fillna': 'ffill', 'transformations': {'0': 'ClipOutliers', '1': 'RobustScaler', '2': 'RegressionFilter', '3': 'DifferencedTransformer'}, 'transformation_params': {'0': {'method': 'clip', 'std_threshold': 4, 'fillna': None}, '1': {}, '2': {'sigma': 1.5, 'rolling_window': 90, 'run_order': 'season_first', 'regression_params': {'regression_model': {'model': 'ElasticNet', 'model_params': {}}, 'datepart_method': 'simple_binarized', 'polynomial_degree': None, 'transform_dict': None, 'holiday_countries_used': False}, 'holiday_params': None}, '3': {}}}
+{'window_size': 10, 'input_dim': 'univariate', 'output_dim': 'forecast_length', 'normalize_window': False, 'max_windows': 5000, 'regression_type': None, 'regression_model': {'model': 'KerasRNN', 'model_params': {'kernel_initializer': 'glorot_normal', 'epochs': 50, 'batch_size': 32, 'optimizer': 'rmsprop', 'loss': 'mse', 'hidden_layer_sizes': [32, 64, 32], 'rnn_type': 'GRU', 'shape': 1}}}
+Validation: 0, 1, 2, 3
+SMAPE: 40.289447115807924, 103.35175506915802, 197.1521678496397, 107.3547520866991
+MAE: 84.88595694601463, 250.17761115090107, 1328.868018326164, 138.36107877705118
+SPL: 0.2690848463658982, 1.3089773399033724, 10.197974510632365, 1.0337743125500285
+Initiated AutoTS object with best model: 
+AverageValueNaive
+{'fillna': 'quadratic', 'transformations': {'0': 'SeasonalDifference', '1': 'SinTrend', '2': 'RegressionFilter'}, 'transformation_params': {'0': {'lag_1': 7, 'method': 'Mean'}, '1': {}, '2': {'sigma': 3, 'rolling_window': 90, 'run_order': 'season_first', 'regression_params': {'regression_model': {'model': 'DecisionTree', 'model_params': {'max_depth': None, 'min_samples_split': 2}}, 'datepart_method': 'simple_2', 'polynomial_degree': None, 'transform_dict': None, 'holiday_countries_used': False}, 'holiday_params': None}}}
+{'method': 'Mean', 'window': 24}
+Validation: 0, 1, 2, 3
+SMAPE: 78.49946258228492, 52.05940261723313, 193.97506630384657, 61.57356356836788
+MAE: 86.66575851102998, 53.11030576799522, 1428.91597145326, 117.80413313789478
+SPL: 0.27176327062385014, 0.3448095996190564, 11.153817047773973, 0.41698108022554564
+Initiated AutoTS object with best model: 
+MAR
+{'fillna': 'ffill', 'transformations': {'0': 'AnomalyRemoval', '1': 'SeasonalDifference', '2': 'DifferencedTransformer', '3': 'STLFilter'}, 'transformation_params': {'0': {'method': 'mad', 'method_params': {'distribution': 'chi2', 'alpha': 0.05}, 'fillna': 'ffill', 'transform_dict': {'fillna': None, 'transformations': {'0': 'ClipOutliers'}, 'transformation_params': {'0': {'method': 'clip', 'std_threshold': 6}}}}, '1': {'lag_1': 12, 'method': 'LastValue'}, '2': {}, '3': {'decomp_type': 'STL', 'part': 'trend', 'seasonal': 7}}}
+{'seasonality': 7, 'family': 'gamma', 'maxiter': 200}
+Validation: 0, 1, 2, 3
+SMAPE: 85.25458091577894, 160.870253101695, 77.38660931656453, 27.848704887981857
+MAE: 69.78591462007387, 106.08047030136053, 142.93594786379728, 63.35216978960974
+SPL: 0.3433842910607515, 0.5430693632138799, 0.7228262949876569, 0.33944385481655426
+Initiated AutoTS object with best model: 
+SeasonalNaive
+{'fillna': 'zero', 'transformations': {'0': 'ClipOutliers', '1': 'AlignLastValue', '2': 'ClipOutliers'}, 'transformation_params': {'0': {'method': 'clip', 'std_threshold': 4, 'fillna': None}, '1': {'rows': 1, 'lag': 28, 'method': 'additive', 'strength': 1.0, 'first_value_only': False}, '2': {'method': 'clip', 'std_threshold': 3.5, 'fillna': None}}}
+{'method': 'mean', 'lag_1': 12, 'lag_2': None}
+Validation: 0, 1, 2, 3
+SMAPE: 40.0194835085589, 114.74178893452911, 144.33769668608537, 74.65156510577599
+MAE: 56.182927995297916, 70.92511713152514, 134.2016666666678, 159.99751444995016
+SPL: 0.2067626314645175, 0.20974894448726442, 0.228623919284116, 0.6185545758206267
+Initiated AutoTS object with best model: 
+GLS
+{'fillna': 'pchip', 'transformations': {'0': 'EWMAFilter', '1': 'Detrend', '2': 'cffilter', '3': 'SeasonalDifference', '4': 'Discretize', '5': 'RobustScaler'}, 'transformation_params': {'0': {'span': 7}, '1': {'model': 'Linear', 'phi': 1, 'window': None, 'transform_dict': None}, '2': {}, '3': {'lag_1': 12, 'method': 'LastValue'}, '4': {'discretization': 'center', 'n_bins': 20}, '5': {}}}
+{}
+Validation: 0, 1, 2, 3
+SMAPE: 105.04851452756498, 50.50816542102862, 154.98331711261076, 160.34564174976674
+MAE: 138.58317857660253, 38.253011075711164, 236.43221412849041, 214.99644014265846
+SPL: 0.26074381182716166, 0.13383214798292076, 0.7185722730484712, 0.33389698822896446
+Initiated AutoTS object with best model: 
+LastValueNaive
+{'fillna': 'fake_date', 'transformations': {'0': 'SeasonalDifference', '1': 'SinTrend'}, 'transformation_params': {'0': {'lag_1': 7, 'method': 'LastValue'}, '1': {}}}
+{}
+Validation: 0, 1, 2, 3
+SMAPE: 46.56546061532054, 169.5388938194067, 98.26164143947851, 15.257052255152573
+MAE: 68.30324392778691, 208.9952091684519, 90.25683890522566, 22.117048034664037
+SPL: 0.17261939367717463, 0.5307234961978978, 0.17703875933258184, 0.26126415636267397
+Initiated AutoTS object with best model: 
+NVAR
+{'fillna': 'rolling_mean_24', 'transformations': {'0': 'LocalLinearTrend', '1': 'KalmanSmoothing', '2': 'PositiveShift', '3': 'SinTrend'}, 'transformation_params': {'0': {'rolling_window': 0.1, 'n_tails': 360, 'n_future': 0.2, 'method': 'mean'}, '1': {'model_name': 'AR(2)', 'state_transition': [[1, 1], [0.1, 0]], 'process_noise': [[1, 0], [0, 0]], 'observation_model': [[1, 0]], 'observation_noise': 1.0, 'em_iter': None}, '2': {}, '3': {}}}
+{'k': 1, 'ridge_param': 0.2, 'warmup_pts': 1, 'seed_pts': 1, 'seed_weighted': None, 'batch_size': 10, 'batch_method': 'max_sorted'}
+Validation: 0, 1, 2, 3
+SMAPE: 62.624079689532984, 73.33437320225131, 141.31812017459637, 97.82548052868198
+MAE: 121.8363313771212, 132.94794929707277, 80.46638472066691, 124.4731655872378
+SPL: 0.17975075030107163, 0.6180198892555967, 0.26233903685529253, 0.34141411630341595
+Initiated AutoTS object with best model: 
+SeasonalityMotif
+{'fillna': 'median', 'transformations': {'0': 'Detrend', '1': 'Detrend'}, 'transformation_params': {'0': {'model': 'Linear', 'phi': 1, 'window': None, 'transform_dict': {'fillna': None, 'transformations': {'0': 'EWMAFilter'}, 'transformation_params': {'0': {'span': 7}}}}, '1': {'model': 'GLS', 'phi': 1, 'window': None, 'transform_dict': None}}}
+{'window': 5, 'point_method': 'midhinge', 'distance_metric': 'mae', 'k': 10, 'datepart_method': 'recurring'}
+Validation: 0, 1, 2, 3
+SMAPE: 97.720110968198, 76.5058383871895, 104.76005111766399, 169.69310041793472
+MAE: 263.9673772621009, 135.91686534672422, 74.83438202767444, 89.15176462960657
+SPL: 0.8109134103723321, 0.2641308503174895, 0.23617985721242973, 0.1509084237882698
