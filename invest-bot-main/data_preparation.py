@@ -1,17 +1,18 @@
-from logging import config
-
+import os
 import numpy as np
 import pandas as pd
 import statsmodels.api as sm
-from twisted.application.internet import ClientService
+from tinkoff.invest import Client
 
-CONFIG_FILE = "settings.ini"
+CONFIG_FILE = "../../settings.ini"
 TICKER = 'SBER'  # Цифровой актив
-client_service = ClientService(config.tinkoff_token, config.tinkoff_app_name)
+TOKEN = os.environ["INVEST_TOKEN"]
+client = Client(TOKEN)
+
 
 # Получение Данных
 def data_fr():
-    futures_data = client_service.klines(symbol=TICKER, interval=client_service.KLINE_INTERVAL_5MINUTE, limit=100)
+    futures_data = client.klines(symbol=TICKER, interval=client.KLINE_INTERVAL_5MINUTE, limit=100)
     temp_df = pd.DataFrame(futures_data, columns=['Opentime', 'Open', 'High', 'Low', 'Close', 'Volume',
                                                   'Closetime', 'Quotee',
                                                   'Number', 'TakerBuyBaseAssetVolume',

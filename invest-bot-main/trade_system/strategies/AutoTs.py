@@ -1,17 +1,17 @@
 import datetime
+import os
 import time
-from logging import config
-
 import numpy as np
 import pandas as pd
 from autots import AutoTS
-from twisted.application.internet import ClientService
+from tinkoff.invest import Client
 
-CONFIG_FILE = "settings.ini"
-
+CONFIG_FILE = "../../settings.ini"
+TOKEN = os.environ["INVEST_TOKEN"]
 last_result = None
 last_execution_time = None
-client_service = ClientService(config.tinkoff_token, config.tinkoff_app_name)
+client = Client(TOKEN)
+
 tickers = ['SBER', 'GAZP', 'ROSN', 'LKOH']
 num_cycles = 1
 flat_level = 30
@@ -22,7 +22,7 @@ def get_pair_dfs(tickers, num_cycles):
     for ticker in tickers:
         df = pd.DataFrame(columns=['Opentime', f'{ticker}_Open', f'{ticker}_High', f'{ticker}_Low', f'{ticker}_Close'])
         for i in range(num_cycles):
-            tickers_data = client_service.klines(symbol=ticker, interval=client_service.KLINE_INTERVAL_1HOUR, limit=500)
+            tickers_data = client.klines(symbol=ticker, interval=client.KLINE_INTERVAL_1HOUR, limit=500)
             if not tickers_data:
                 break
             temp_df = pd.DataFrame(tickers_data,
@@ -80,7 +80,7 @@ def train_models(df_diff):
     forecast_high = prediction_high.forecast
     print(forecast_high)
     # Дозаписывание прогнозных данных в текстовый файл
-    with open("model_high.txt", 'a') as file:
+    with open("../../model_high.txt", 'a') as file:
         file.write(f"{model_high}\n")
     return forecast_high
 
